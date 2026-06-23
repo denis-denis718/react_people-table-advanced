@@ -23,7 +23,9 @@ export const PeopleFilters = () => {
     const newQuery = event.target.value;
 
     setSearchParams(
-      new URLSearchParams(getSearchWith(searchParams, { query: newQuery || null })),    
+      new URLSearchParams(
+        getSearchWith(searchParams, { query: newQuery || null }),
+      ),
     );
   };
 
@@ -67,7 +69,7 @@ export const PeopleFilters = () => {
       </div>
 
       <div className="panel-block">
-        <div className="level is-flex-grow-1 is-mobile" data-cy="CenturyFilter">        
+        <div className="level is-flex-grow-1 is-mobile" data-cy="CenturyFilter">
           <div className="level-left">
             {CENTURIES.map(century => (
               <SearchLink
