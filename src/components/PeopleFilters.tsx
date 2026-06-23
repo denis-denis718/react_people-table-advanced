@@ -22,7 +22,9 @@ export const PeopleFilters = () => {
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
 
-    setSearchParams(getSearchWith(searchParams, { query: newQuery || null }));
+    setSearchParams(
+      new URLSearchParams(getSearchWith(searchParams, { query: newQuery || null })),    
+    );
   };
 
   const toggleCentury = (century: string) => {
@@ -65,7 +67,7 @@ export const PeopleFilters = () => {
       </div>
 
       <div className="panel-block">
-        <div className="level is-flex-grow-1 is-mobile" data-cy="CenturyFilter">
+        <div className="level is-flex-grow-1 is-mobile" data-cy="CenturyFilter">        
           <div className="level-left">
             {CENTURIES.map(century => (
               <SearchLink

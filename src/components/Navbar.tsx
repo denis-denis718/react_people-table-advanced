@@ -20,7 +20,10 @@ export const Navbar = () => {
             Home
           </NavLink>
 
-          <NavLink className={getLinkClass} to={{ pathname: '/people', search }}>       
+          <NavLink
+            className={getLinkClass}
+            to={{ pathname: '/people', search }}
+          >
             People
           </NavLink>
         </div>
